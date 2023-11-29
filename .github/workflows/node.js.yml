@@ -23,10 +23,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: | 
-        npm ci
-        make test-coverage
-    - run: npm test
-    
     - name: Coveralls GitHub Action
       uses: coverallsapp/github-action@v2.2.3
+    - run: npm ci
+    - run: make test-coverage
+    - run: npm test
+    
