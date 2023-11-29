@@ -26,6 +26,9 @@ test('number is rounded upwards with the same precision', () => {
 test('decimal is rounded upwards specifying 0 precision', () => {
     expect(ceil(10.1252, 0)).toBe(11);
 });
+test('number is 0', () => {
+    expect(ceil(0, 1)).toBe(0);
+});
 test('number without decimal is given positive precision', () => {
     expect(ceil(8, 3)).toBe(8.000);
 });
