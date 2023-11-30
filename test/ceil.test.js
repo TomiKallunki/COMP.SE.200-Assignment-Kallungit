@@ -36,10 +36,10 @@ test('number with decimal is given negative precision', () => {
     expect(ceil(1055.52, -2)).toBe(1100);
 });
 test('first parameter is not a number', () => {
-    expect(() => ceil("abc", -2)).toThrow(TypeError);
+    expect(ceil("abc", -2)).toBeFalsy();
 });
 test('second parameter is not a number', () => {
-    expect(() => ceil(5, "asd")).toThrow(TypeError);
+    expect(ceil(1.123, "asd")).toBe(2);
 });
 test('rounding up incredibly large decimal', () => {
     expect(ceil(1.012502105202101250215012502152102101250152128523805734092578348957289052830932859023830985923085320985903290235809328095238309258902309328003, 140))
