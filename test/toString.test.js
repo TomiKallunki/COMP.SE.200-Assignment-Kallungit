@@ -1,13 +1,6 @@
 
 import toString from '../src/toString';
 
-/*
-
-test('', () => {
-    expect(toString()).toBe();
-});
- */
-
 test('Non-empty string results in itself', () => {
     expect(toString('Something')).toBe('Something');
 });
