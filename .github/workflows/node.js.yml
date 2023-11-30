@@ -26,3 +26,4 @@ jobs:
       with:
         name: test-report
         path: ./test-report.html
+        retention-days: 3
