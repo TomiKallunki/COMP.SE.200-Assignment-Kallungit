@@ -21,3 +21,8 @@ jobs:
       continue-on-error: true
     - name: Coveralls GitHub Action
       uses: coverallsapp/github-action@v2.2.3
+    - name: Save html test report
+      uses: actions/upload-artifact@v3
+      with:
+        name: test-report
+        path: ./test-report.html
