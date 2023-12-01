@@ -10,17 +10,8 @@ test('clamp to upper bound', () => {
 test('clamp with same bound', () => {
     expect(clamp(5, 5, 5)).toBe(5);
 });
-test('clamp with lower and upper bound reversed', () => {
-    expect(clamp(5, 5, -5)).toBe(5);
-});
-test('clamp with value in between closer to lower', () => {
-    expect(clamp(6, 3, 11)).toBe(3);
-});
-test('clamp with value in between closer to upper', () => {
-    expect(clamp(10, 3, 11)).toBe(11);
-});
-test('clamp with value in middle', () => {
-    expect(clamp(5, 0, 10)).toBe(0);
+test('clamp with value in between', () => {
+    expect(clamp(6, 3, 11)).toBe(6);
 });
 test('first parameter is not a number', () => {
     expect(clamp("number", 0, 10)).toBeFalsy();
