@@ -25,3 +25,6 @@ test('string number to finite', () => {
 test('parameter is not a number', () => {
     expect(toFinite("abc")).toBeFalsy();
 });
+test('no parameter', () => {
+    expect(toFinite(null)).toBe(0);
+});

@@ -22,4 +22,9 @@ test('string number to number', () => {
 test('parameter is not a number', () => {
     expect(toNumber("qwerty")).toBeFalsy();
 });
-
+test('parameter is a symbol', () => {
+    expect(toNumber(Symbol("test"))).toBe(NaN);
+});
+test('parameter is an object', () => {
+    expect(toNumber(Object(22))).toBe(22);
+});
