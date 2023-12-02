@@ -25,7 +25,7 @@ test('string is not equal to corresponding number', () => {
 test('character is the same as the character', () => {
     expect(eq('y', 'y')).toBeTruthy();
 });
-test('character is not the same as object of that character', () => {
+test('character is not the same as object with the same character', () => {
     expect(eq('x', Object('x'))).toBeFalsy();
 });
 test('NaN is equal to NaN', () => {

@@ -22,9 +22,21 @@ test('decimal to finite', () => {
 test('string number to finite', () => {
     expect(toFinite('790000')).toBe(790000);
 });
-test('parameter is not a number', () => {
+test('parameter is a string', () => {
     expect(toFinite("abc")).toBeFalsy();
 });
-test('no parameter', () => {
+test('null parameter', () => {
     expect(toFinite(null)).toBe(0);
+});
+test('NaN parameter', () => {
+    expect(toFinite(NaN)).toBe(0);
+});
+test('undefined parameter', () => {
+    expect(toFinite(undefined)).toBe(0);
+});
+test('empty string parameter', () => {
+    expect(toFinite("")).toBe(0);
+});
+test('parameter is a boolean', () => {
+    expect(toFinite(true)).toBe(1);
 });

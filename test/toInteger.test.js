@@ -13,6 +13,9 @@ test('negative number to integer', () => {
 test('number min value to integer', () => {
     expect(toInteger(Number.MIN_VALUE)).toBe(0);
 });
+test('number max value to integer', () => {
+    expect(toInteger(Number.MAX_VALUE)).toBe(1.7976931348623157e+308);
+});
 test('infinity value to integer', () => {
     expect(toInteger(Infinity)).toBe(1.7976931348623157e+308);
 });
