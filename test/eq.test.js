@@ -22,10 +22,7 @@ test('string is equal to itself', () => {
 test('string is not equal to corresponding number', () => {
     expect(eq("5", 5)).toBeFalsy();
 });
-test('character is the same as the character', () => {
-    expect(eq('y', 'y')).toBeTruthy();
-});
-test('character is not the same as object with the same character', () => {
+test('string is not the same as object with the same string', () => {
     expect(eq('x', Object('x'))).toBeFalsy();
 });
 test('NaN is equal to NaN', () => {

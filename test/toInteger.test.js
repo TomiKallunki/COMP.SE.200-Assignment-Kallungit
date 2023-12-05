@@ -22,6 +22,6 @@ test('infinity value to integer', () => {
 test('string number to integer', () => {
     expect(toInteger('55.22')).toBe(55);
 });
-test('parameter is not a number', () => {
+test('string that is not a number', () => {
     expect(toInteger("zxc")).toBeFalsy();
 });

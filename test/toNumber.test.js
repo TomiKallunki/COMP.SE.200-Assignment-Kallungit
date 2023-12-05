@@ -19,7 +19,7 @@ test('infinity to number', () => {
 test('string number to number', () => {
     expect(toNumber('12')).toBe(12);
 });
-test('parameter is not a number', () => {
+test('parameter string that is not a number', () => {
     expect(toNumber("qwerty")).toBeFalsy();
 });
 test('parameter is null', () => {
@@ -33,4 +33,22 @@ test('parameter is an object', () => {
 });
 test('parameter is an object that is not a value', () => {
     expect(toNumber(Object(NaN))).toBeFalsy();
+});
+test('string binary to number', () => {
+    expect(toNumber("0b101")).toBe(5);
+});
+test('string octal to number', () => {
+    expect(toNumber("0o123")).toBe(83);
+});
+test('string bad hexadecimal', () => {
+    expect(toNumber("-0x7B")).toBeFalsy();
+});
+test('parameter is undefined', () => {
+    expect(toNumber(undefined)).toBeFalsy();
+});
+test('array with one number to number', () => {
+    expect(toNumber([2])).toBe(2);
+});
+test('object with zero to zero', () => {
+    expect(toNumber(Object(0))).toBe(0);
 });
