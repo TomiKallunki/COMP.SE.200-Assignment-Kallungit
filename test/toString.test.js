@@ -73,3 +73,10 @@ test('Array of n null values results in a string with n-1 commas', () => {
     expect(toString([null, undefined, null])).toBe(',,');
 });
 
+test('NaN -> NaN as a string', () => {
+    expect(toString(NaN)).toBe('NaN');
+});
+
+test('bigint -> bigint as string', () => {
+    expect(toString(BigInt(5))).toBe('5');
+});

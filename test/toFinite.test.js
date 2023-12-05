@@ -26,17 +26,35 @@ test('parameter is a string', () => {
     expect(toFinite("abc")).toBeFalsy();
 });
 test('null parameter', () => {
-    expect(toFinite(null)).toBe(0);
+    expect(toFinite(null)).toBeFalsy();
 });
 test('NaN parameter', () => {
-    expect(toFinite(NaN)).toBe(0);
+    expect(toFinite(NaN)).toBeFalsy();
 });
 test('undefined parameter', () => {
-    expect(toFinite(undefined)).toBe(0);
+    expect(toFinite(undefined)).toBeFalsy();
 });
 test('empty string parameter', () => {
-    expect(toFinite("")).toBe(0);
+    expect(toFinite("")).toBeFalsy();
 });
 test('parameter is a boolean', () => {
     expect(toFinite(true)).toBe(1);
+});
+test('zero to zero', () => {
+    expect(toFinite(0)).toBe(0);
+});
+test('bigint parameter', () => {
+    expect(toFinite(BigInt(2))).toBe(2);
+});
+test('array with one number to finite', () => {
+    expect(toFinite([1.7976931348623157e+309])).toBe(1.7976931348623157e+308);
+});
+test('empty array as parameter', () => {
+    expect(toFinite([])).toBeFalsy();
+});
+test('array with several numbers as parameter', () => {
+    expect(toFinite([2, 5, 10])).toBeFalsy();
+});
+test('object with number to finite', () => {
+    expect(toFinite(Object(1.7976931348623157e+309))).toBe(1.7976931348623157e+308);
 });

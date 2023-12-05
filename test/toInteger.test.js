@@ -22,6 +22,36 @@ test('infinity value to integer', () => {
 test('string number to integer', () => {
     expect(toInteger('55.22')).toBe(55);
 });
-test('string that is not a number', () => {
+test('zero to zero', () => {
+    expect(toInteger(0)).toBe(0);
+});
+test('string that is not a number as parameter', () => {
     expect(toInteger("zxc")).toBeFalsy();
+});
+test('null as parameter', () => {
+    expect(toInteger(null)).toBeFalsy();
+});
+test('undefined as parameter', () => {
+    expect(toInteger(undefined)).toBeFalsy();
+});
+test('empty string as parameter', () => {
+    expect(toInteger("")).toBeFalsy();
+});
+test('NaN as parameter', () => {
+    expect(toInteger(NaN)).toBeFalsy();
+});
+test('empty array as parameter', () => {
+    expect(toInteger([])).toBeFalsy();
+});
+test('array with several numbers as parameter', () => {
+    expect(toInteger([2, 3, 5])).toBeFalsy();
+});
+test('array with one number to integer', () => {
+    expect(toInteger([5.25])).toBe(5);
+});
+test('object with number to integer', () => {
+    expect(toInteger(Object(5.25))).toBe(5);
+});
+test('bigint as parameter', () => {
+    expect(toInteger(BigInt(5))).toBe(5);
 });

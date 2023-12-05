@@ -49,6 +49,24 @@ test('parameter is undefined', () => {
 test('array with one number to number', () => {
     expect(toNumber([2])).toBe(2);
 });
+test('zero to zero', () => {
+    expect(toNumber(0)).toBe(0);
+});
 test('object with zero to zero', () => {
     expect(toNumber(Object(0))).toBe(0);
+});
+test('empty string as parameter', () => {
+    expect(toNumber("")).toBeFalsy();
+});
+test('NaN as parameter', () => {
+    expect(toNumber(NaN)).toBeFalsy();
+});
+test('empty array as parameter', () => {
+    expect(toNumber([])).toBeFalsy();
+});
+test('array with several numbers as parameter', () => {
+    expect(toNumber([2, 3, 5])).toBeFalsy();
+});
+test('bigint as parameter', () => {
+    expect(toNumber(BigInt(5))).toBe(5);
 });
